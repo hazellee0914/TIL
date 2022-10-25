@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최솟값 만들기</title>
+</head>
+<body>
+  <script>
+    function solution(A, B) {
+  A.sort((a, b) => a - b);
+  B.sort((a, b) => b - a);
+  return A.reduce((sum, curr, i) => sum + curr * B[i], 0);
+}
+  </script>
+</body>
+</html>
+
+<!-- 
+  각 배열의 요솔르 곱해서 더했을 경우 최솟값을 만들기 위한 (가장 작은수 * 가장 큰 수) 를 곱한 수를 더하면 됨.
+  여기서 첫번째 배열은 오름차순으로 정렬하고, 두번째 배열은 내림차순으로 정렬.
+  그리고 두 배열의 인덱스를 0부터 순서대로 곱해서 더해나가면 됨.
+  - sort(): public static  void sort(List<T> list)
+            public static  void sort(List<T> list, Comparator<? super T> c)
+  - Collections.sort() :오름차순으로 정렬하기
+                      :내림차순으로 정렬하기
+                      :대소문자 구분없이 정렬하기
+- List.sort() - Java 8 이후 : 오름차순으로 정렬하기
+                           :내림차순으로 정렬하기
+                          :대소문자 구분없이 정렬하기
+- ruduce();: arr.reduce(callback(accumulator, currentValue [, currentIndex[, array]]) [, initialValue])
+ -->
