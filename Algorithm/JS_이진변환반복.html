@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이진 변환 반복하기</title>
+</head>
+<body>
+  <script>
+    function solution(s) {
+    const answer = [0, 0];
+    while(1) {
+        const change = s.split('').filter(i => i === '1').join('').length;
+        answer[1] += s.split('').filter(i=> i === '0').join('').length;
+        answer[0] += 1;
+        if (change.toString(2).length ===1) 
+            return answer;
+        s = change.toString(2);
+    }
+    return answer;
+}
+  </script>
+</body>
+</html>
+
+
+<!-- 
+  문제에 나와 있는 그대로 주어진 숫자에서 0을 제외하는 작업과 이진수로 변환하는 작업이다. 
+  while 문을 통해서 문자열이 1이 될 때까지 이진 변환을 반복한다.
+  - split() : string.split(separator, limit)
+  - filter(): arr.find(callback(element[, index[, array]])[, thisArg])
+  - join(): arr.join([separator])
+  - toString(); 배열을 표현한느 문자열을 리턴
+ -->
