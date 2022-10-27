@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>방문 만들기</title>
+</head>
+<body>
+  <script>
+    function solution(dirs) {
+    let move = { L: [-1, 0], R: [1, 0], U: [0, 1], D: [0, -1] };
+    let now = [0, 0];
+    let route = new Set();
+    
+    for (let dir of dirs) {
+        let nowX = now[0] + move[dir][0];
+        let nowY = now[1] + move[dir][1];
+        
+        if (nowX > 5 || nowX < -5 || nowY > 5 || nowY < -5) continue;
+        
+        route.add("" + now[0] + now[1] + nowX + nowY);
+        route.add("" + nowX + nowY + now[0] + now[1]);
+        
+        now = [nowX, nowY];
+    }
+    
+    return route.size / 2;
+}
+  </script>
+</body>
+</html>
+
+
+<!-- 
+  U, D, R, L 명령어에 따라 다음으로 이동할 x축 좌표와  y 축 좌표를 구한다.
+  x축 좌표와 y 축 좌표가 좌푱 평면의 경계를 넘어갈 경우 무시하기 때문에 좌표 평면의ㅏ 경계를 넘으면 바로 다음 반복으로 넘어감.
+  좌표 경계를  넘지 않고 이동을 했다면 기존에 움직이기 전 x좌표와 y좌표, 그리고 이동할 x좌표dhk y좌표를 순서로 바꿔 2번 넣어준다.
+  여기서 순서를 바꾸가면서 2번 넣어주는 이유는 [0,0] -> [0, 1]로 이동한 길은 [0, 1] -> [1, 0]로 이동한 길과 같기에 이미 거쳐간 길을 
+  반대방향이라고 거쳐가지 않았다고 하면 안되기에 이렇게 순서를 바꿔가면 2번 넣어줌으로써 상황도 중복을 방지.
+  마지막에 모든 경우를 2로 나누면 답을 구할 수 있다.
+  cur 변수에 이동한 x 좌표와 y좌표를 넣어주고 움직임 명령이 모두 끝날때 까지 반복 계속한뒤
+  2로 나누면 반대방향으로 오고 가는 경우 하나로 합한 값을 구하면 원하는 값을 얻을 수 있다.
+  - set(): 
+ -->
