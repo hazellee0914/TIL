@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K번째 수</title>
+</head>
+<body>
+  function solution(numbers) {
+    
+    var answer = numbers.map(c=> c + '').
+    				sort((a,b) => (b+a) - (a+b)).join('');
+    
+    return answer[0]==='0'? '0' : answer;
+}
+</body>
+</html>
+
+<!-- 
+  map() 을 이용해서 array를 통해 순서대로 조건에 맞게 자르고 정렬한 뒤에 k번째 수를 구하여 commands 배열을 재구성한 뒤에 반환!
+ -->
