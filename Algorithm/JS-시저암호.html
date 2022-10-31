@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시저 암호</title>
+</head>
+<body>
+  <script>
+    function solution(s, n){
+      return s.split("").map(value => {
+          if (value === " ") return value;
+          return value.toUpperCase().charCodeAt() + n > 90
+          ? String.fromCharCode(value.charCodeAt() + n - 26)
+          : String.fromCharCode(value.charCodeAt() + n)
+      }).join("");
+    }
+  </script>
+</body>
+</html>
+
+<!-- 
+  문자열 s를 split("")을 배열을 만들어주고 
+  map() 이용하여 배열 수만큼 반복하면서 value 값이 " " 공백이라면 그대로 공백을 리턴해준다.
+  value 를 대문자로 변환시킨 값에 n을 더한 값이 90 을 넘어가면 Z를 넘어가는 값이기 때문에 
+  다시 처음 A로 돌아가기 위해 스키드코드값에 +4한 값에 -26 해준 값을 문자열로 변화시켜서 리턴해준다.
+  그렇지 않을 때 주어진 값의 아스키드코드값에 +4 한 값을 다시 문자열로 변화시켜서 리턴해준다.
+
+
+  - charCodeAt() : 해당하는 문자의 아스키코드값을 반환해주고,
+  - String.fromCharCode() : 해당하는 아스키드코드 숫자 문자를 반환해줌.
+ -->
