@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>약수의 개수와 덧셈</title>
+</head>
+<body>
+  <script>
+  function solution(left, right) {
+    var answer = 0;
+
+    for(let i=left; i<=right; i++) {
+        Math.sqrt(i) % 1 === 0 ? answer-=i : answer+=i;
+    }
+    
+    return answer;
+  }
+  </script>
+</body>
+</html>
+
+
+<!-- 
+  1. for loop 통해서 Math.sqrt()를 이용해 해당 left 값의 제곱근을 1로 나눈 나머지 값이 0이라면
+  2. 제곱근을 1로 나눈 나머지 값이 0이면 해당 값의 약수 개수는 홀수이고 나머지값이 0이 아니라면 개수가 쩍수이다.
+  3. 참 answer 에서 해당 left 을 뺄셈
+  4. 거짓 이라면 덧셈
+ -->
