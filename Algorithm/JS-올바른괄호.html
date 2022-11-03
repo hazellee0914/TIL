@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>올바른 괄호</title>
+</head>
+<body>
+  <script>
+  function solution(s){
+    let stackCount = 0;
+    for (let i = 0; i < s.length; i++) {
+        stackCount += s[i] === '(' ? 1 : -1;
+        if (stackCount < 0) return false;
+    }
+    return stackCount === 0 ? true : false; 
+  }
+  </script>
+</body>
+</html>
+
+
+
+<!-- 
+ stack() :
+ 사용할 변수 stackCount 를 하나 만들고, 문자열 s 를 반복문을 돌려서 '(' 문자일 때는 stacCount +1 을 해주고
+')' 문자일 때는 -1 해준다. 그리고 '(' 가 먼저 나오면 stackCount -1 될것이므로 올바른 괄호가 아니여서 false 반환. 
+반복문이 끝나면 stackCount 가 0보다 크다면 ') 가 더 남아있다는 말이므로 
+stackCount 가 0일 때 true를 반환하고 그렇지 않으면 false 를 반환 한다.  
+ -->
