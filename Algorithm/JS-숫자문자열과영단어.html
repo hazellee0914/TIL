@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자 문자열과 영단어</title>
+</head>
+<body>
+  <script>
+  function solution(s) {
+    const numbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    
+    return +numbers.reduce((result, number, i) => 
+        result.replace(new RegExp(number, 'g'), i),s
+    )
+  }
+  </script>
+</body>
+</html>
+
+
+<!-- 
+  
+  1) 변수에 저장된 값을 기준으로 문자열을 처리해야 할 때, 정규 표현식 생성자를 이용해서 처리하면 된다.
+  2) RegExp 객체는 리터럴 표기법과 생성자로써 생성.
+    - 리터럴 표긱법의 매개변수는 두 빗금으로 감싸야 하며 따옴표를 사용하지 않는다.
+    - 생성자 함수의 매개변수는 빗금으로 감싸지 않으나 따옴표를 사용. 
+
+    /ab+c/i;
+    new RegExp(/ab+c/, "i"); // 리터럴
+    new RegExp("ab+c", "i"); // 생성자
+
+ -->
