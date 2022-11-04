@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최댓값과 최솟값</title>
+</head>
+<body>
+  <script>
+  function solution(s) {
+    const arr = s.split(' ');
+
+    return Math.min(...arr)+' '+Math.max(...arr);
+  }
+  </script>
+</body>
+</html>
+
+<!-- 
+  math object의 max(), min() 내장 함수와 spread operator 를 사용하여 내부의 값을 나열시켜 문제.
+ -->
