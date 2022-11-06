@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예산</title>
+</head>
+<body>
+  <script>
+  function solution(d, budget) {
+    d.sort((a, b) => a - b);
+    while (d.reduce((a, b) => (a + b), 0) > budget) {
+      d.pop();
+    }
+
+    return d.length;
+  }
+  </script>
+</body>
+</html>
+
+
+<!-- 
+  오름차순으로 정렬해주고 reduce() 로 전체 희망예산의 합을 구하고 그 합이 budget 보다 크면 pop 으로 d의 마지막 value 를 반복하는 작업을 while loop 으로 반복해서 
+  전체 희망예산의 합이 budget 보다 작아지면 반복문에 멈추고 d의 length 를 리턴해서 푼다. 
+ -->
