@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>없는 숫자 더하기</title>
+</head>
+<body>
+  <script>
+  function solution(numbers) {
+    return 45 - numbers.reduce((acc, e) => acc + e, 0);
+  }
+  </script>
+</body>
+</html>
+
+
+<!-- 
+  0부터 9까지 전체 합 - 있는 숫자의 합 = 없는 숫자의 합을 구하면 된다.
+  reduce() :
+ -->
