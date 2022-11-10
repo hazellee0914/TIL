@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이상한 문자 만들기</title>
+</head>
+<body>
+  <script>
+  function solution(s) {
+    let answer = '';
+    let words = s.split(' ');
+    
+    for (let i = 0; i < words.length; i++) {
+        for(let j = 0; j < words[i].length; j++) {
+            if(j % 2 === 0) {
+                answer += words[i][j].toUpperCase();
+            } else {
+                answer += words[i][j].toLowerCase();
+            }
+        }
+        if (i < words.length -1) {
+            answer += ' ';
+        }
+    }
+    return answer;
+  }
+  </script>
+</body>
+</html>
+
+
+<!-- 
+먼저 단어를 split 함수로 쪼개고 words에 넣어주고 이중 반복문으로 각 단어에 들어가 인덱스로 홀수자리인지, 짝수자리인지 판별한다.
+그후로 짝수자리는 toUpperCase(), 홀수자리는 toLowerCase()를 통해서 각각 변환하고 answer에 더해줬다.
+마지막으로 if 조건문으로 단어사이에 공백을 추가해주면 된다.
+ -->
