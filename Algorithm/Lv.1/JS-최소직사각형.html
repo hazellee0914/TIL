@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최소직사각형</title>
+</head>
+<body>
+  <script>
+  function solution(sizes) {
+    let arr = [0,0]
+    sizes.forEach(el=>{
+        let [b,s] = el.sort((a,b)=>b-a)
+        if(b>arr[0]) arr[0] =b
+        if(s>arr[1]) arr[1] =s
+    })
+    return arr[0]*arr[1]
+  }
+  </script>
+</body>
+</html>
+
+
+
+
+<!-- 
+        // 오름차순으로 정렬
+        Collections.sort(list);
+        System.out.println("오름차순 : " + list); // [A, B, C, a]
+ 
+        // 내림차순으로 정렬
+        Collections.sort(list, Collections.reverseOrder());
+        System.out.println("내림차순 : " + list); // [a, C, B, A]
+ 
+        // 대소문자 구분없이 오름차순
+        Collections.sort(list, String.CASE_INSENSITIVE_ORDER);
+        System.out.println("대소문자 구분없이 오름차순 : " + list); // [a, A, B, C]
+ 
+        // 대소문자 구분없이 내림차순
+        Collections.sort(list, Collections.reverseOrder(String.CASE_INSENSITIVE_ORDER));
+        System.out.println("대소문자 구분없이 내림차순 : " + list); // [C, B, a, A]
+        
+        // forEach(): forEach() 함수는 배열의 element에 대해 파라미터로 입력받은 함수를 실행시키는 함수입니다.
+ -->
