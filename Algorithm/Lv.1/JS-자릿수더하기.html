@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자릿수 더하기</title>
+</head>
+<body>
+  <script>
+  function solution(n){
+    let answer = 0
+    n = n.toString()
+    for (let i = 0; i < n.length; i++){
+      answer += parseInt(n[i])
+    }
+    return answer; 
+  }
+  </script>
+</body>
+</html>
+
+
+<!-- 
+  for loop를 이용해 바뀐 문자열의 각 인덱스 값의 문자를 parseInt()함수를 이용해 파싱하여 정수로 반환하고
+  반환받은 값들을 누적 덧셈을 하여 반환하면 되는 문제
+ -->
