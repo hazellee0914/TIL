@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나머지가 1이 되는 수 찾기</title>
+</head>
+<body>
+  <script>
+    function solution(n) {
+      for(let i =2; i<n; i++) {
+          if(n % i ===1){
+              return i
+          }
+      }
+    }
+  </script>
+</body>
+</html>
+
+<!-- 
+   for loop를 이용해 초기값을 let i = 2로 제한 조건에서 n은 이상이므로, 나누는 수(i)의 최솟값이 1이 될 순 없어서 2로 시작해서 풀면 된다.
+ -->
