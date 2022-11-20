@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자연수 뒤집어 배열로 만들기</title>
+</head>
+<body>
+  <script>
+  function solution(n) {
+    return n.toString().split('').reverse().map(o => o = parseInt(o));
+  }
+  </script>
+</body>
+</html>
+
+<!-- 
+ sqrt 내장함수 이용해서 풀면 될 것.
+ 정수 n의 제곱근을 구하고 제곱근일 경우, 제곱근이 아닐 경우를 조건으로 한다. 
+ 이 때 구분하는 조건은 나머지(%)를 사용한다. 
+ 제곱근일 경우, 제곱근에 +1을 한 제곱을 출력하고 제곱근이 아닐 경우, -1을 출력하면 된다 
+ -->
