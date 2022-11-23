@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>같은 숫자는 싫어</title>
+  </head>
+  <body>
+    <script>
+    function solution(arr){
+      return arr.filter((val,index) => val != arr[index+1]);
+    }
+    </script>
+  </body>
+</html>
+
+
+<!-- 
+ i+1 한 것과 비교하여 같으면 아무것도 안하고 넘어간다. 
+ 다르다면 answer에 푸쉬.
+ -->
