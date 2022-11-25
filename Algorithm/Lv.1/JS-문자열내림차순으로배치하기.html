@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문자열 내림차순으로 배치하기</title>
+</head>
+<body>
+  <script>
+  function solution(s) {
+    return s.split('').sort().reverse().join('');
+  }
+  </script>
+</body>
+</html>
+
+
+<!-- 
+  먼저 split() 사용하여 배열을 나누고 sort() 순차적으로 나열한뒤 reverse() 로 뒤집고 join() 로 문자열 바꿔줘서 반환 한다.
+ -->
