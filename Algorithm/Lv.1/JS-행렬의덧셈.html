@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>행렬의 덧셈</title>
+</head>
+<body>
+  function solution(A, B) {
+    
+    return A.map((a, i) => a.map((b, j) => b + B[i][j]));
+  }
+</body>
+</html>
+
+
+<!-- 
+ for loop를 사용해서 문제를 해결할 수도 있고 map()을 활용하여 2차원 배열로 코드를 다뤘다. 
+ 그리고 arrow() 함수를 전달 할 때, arrow()의 인자를 잘 활용하여 더해주는 간단한 문제였다. 
+ -->
+
+ 
