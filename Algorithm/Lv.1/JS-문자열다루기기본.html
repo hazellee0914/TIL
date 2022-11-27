@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문자열 다루기 기본</title>
+</head>
+<body>
+  <script>
+  function solution(s) {
+    return (s.length===4 || s.length===6) && /^[0-9]+$/.test(s);
+  }
+  </script>
+</body>
+</html>
+
+
+<!-- 
+  - test() 메서드는 주어진 문자열이 정규 표현식을 만족하는지 판별하고, 그 여부를 true 또는 false로 반환한다
+  - ^ : 시작
+  - [0-9] : 0~9까지의 숫자
+  - : 반복, 앞의 문자가 1개 이상인 경우
+  - $ : 종료
+ -->
