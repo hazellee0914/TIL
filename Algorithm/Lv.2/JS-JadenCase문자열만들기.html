@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JadenCase 문자열 만들기</title>
+</head>
+<body>
+  <script>
+  function solution(s) {
+    return s.toLowerCase().split(" ").map((v)=> v.charAt(0).toUpperCase()+v.substring(1)).join(" ");
+  }
+  </script>
+</body>
+</html>
+
+<!-- 
+  먼저 s 를 모두 소문자롤 바꾸고 띄어씌기를 기준으로 split() 나누고 
+  chatArt 인덱스 접근으로 대괄호 표기법을 사용하여 푸는 것.
+ -->
