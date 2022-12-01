@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비밀지도</title>
+</head>
+<body>
+  function solution(n, arr1, arr2) {
+    const answer = [];
+    for(let i = 0; i < n; i++) {
+        let result = '';
+        let b1 = '0'.repeat(n - arr1[i].toString(2).length) + arr1[i].toString(2);
+        let b2 = '0'.repeat(n - arr2[i].toString(2).length) + arr2[i].toString(2);
+        for(let j =0; j < n; j++) {
+            b1[j] === '1' || b2[j] === '1' ? result += '#' : result += ' ';
+        }
+        answer.push(result);
+    }
+    return answer;
+  }
+</body>
+</html>
+
+<!-- 
+  toString() 메서드를 통해 이진수로 변환할 때 앞자리에 0이 있을 경우 생략해서 반환한다.
+  0을 채워 지도의 크기를 맞추기 위해 repeat() 메서드를 사용했다.
+  repeat() 메서드는 문자열을 주어진 횟수만큼 반복해 새로운 문자열을 반환한다.
+ -->
+
+
+ 
