@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>하샤드 수</title>
+</head>
+<body>
+  function solution(x){
+    return !(x % (x + "").split("").reduce((a, b) => +b + +a ));
+  }
+</body>
+</html>
+
+<!-- 
+  먼저 n을 문자열로 만든 후, split() 을 이용해서 배열을 만든 다음 reduce() 로 합을 구하는 식.
+ -->
