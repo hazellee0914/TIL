@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문자열 내 마음대로 정렬하기</title>
+</head>
+<body>
+  function solution(strings, n) {
+    return strings.sort((s1, s2) => s1[n] === s2[n] ? s1.localeCompare(s2) : s1[n].localeCompare(s2[n]));
+  }
+</body>
+</html>
+
+<!-- 
+비교 대상 문자열의 n번째 글자가 같으면 문자열을 비교하고, 
+같지 않으면 n번째 글자를 비교해서 정렬하는 방법!!!!
+
+
+ - String.prototype.localeCompare() : 메서드는 참조 문자열이 정렬 순서에서 주어진 문자열과 앞인지 뒤인지 또는 같은지 나타내는 숫자를 반환
+ -->
