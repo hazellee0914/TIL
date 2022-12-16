@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>isPythagorean</title>
+</head>
+<body>
+  function isPythagorean(side1, side2, side3) {
+    const pow1 = side1 * side1;
+    const pow2 = side2 ** 2;
+    const pow3 = Math.pow(side3, 2);
+  
+    if(pow1 === pow2 + pow3 || pow2 === pow1 + pow3 || pow3 === pow1 + pow2) {
+      return true;
+    } 
+    return false;
+  }
+  
+</body>
+</html>
