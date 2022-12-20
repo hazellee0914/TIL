@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fizzBuzz</title>
+</head>
+<body>
+  function fizzBuzz(num) {
+    // 3과 5를 나누어 떨어지면 
+    // 3으로 나누어 떨어지면
+    // 5로 나누어 떨어지면
+    // 그 밖은
+    if (num % 3 === 0 && num % 5 === 0) {
+      return 'FizzBuzz';
+    } else if (num % 3 === 0) {
+      return 'Fizz';
+    } else if (num % 5 === 0) {
+      return'Buzz';
+    } else {
+      return'No FizzBuzz';
+    }
+  }
+</body>
+</html>
