@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getMaxNumberFromString</title>
+</head>
+<body>
+  function getMaxNumberFromString(str) {
+    // 문자열을 입력 : '53862'
+    // 출력 : '8'
+    // 문제가 있다ㅏ => 문자열끼리 비교가 불가능!!!
+    // 숫자끼리 비교해야 하는데, 어떻게 비교하면 될까?
+  
+    // Tip!!
+    // 컴퓨터가 가장 긴거, 가장 큰거 판단하게 하는 방법
+    // 기준을 하나 만들어 놓고,
+    // 그 기준과 비교해서 더 크면 (또는 길면) 기준 교체
+  
+    // 5 vs 3
+    // 3 vs 8
+    // 8 vs 6 
+  
+    // 기준은 0
+   let max = 0;
+  
+    for(let i = 0; i < str.length; i++) {  // 문자열 전체 탐색하는 반복문
+    // str[0] 가 max 보다 크면, max는 지금부터 str[0]
+      if(Number(str[i]) > max) {         // 숫자로 바꿔서 비교
+        max = Number(str[i]);
+      }
+    }
+    return String(max);         // 문자열 변경 
+  }
+</body>
+</html>
