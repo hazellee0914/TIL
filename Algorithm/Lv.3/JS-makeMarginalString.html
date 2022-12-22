@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>makeMarginalString</title>
+</head>
+<body>
+  function makeMarginalString(str) {
+    // 입력 : 'flower' => string 타입의 문자열
+    // 출력: 'fflfloflowfloweflower' -> 한 글자를 추가할 때마다 부분적으로 완성된 문자열을 전부 이어붙여서 리턴
+    // 0; '
+    // 1 : 'f'
+    // 2 : f +'fl
+    // 3 : f + fl + flo
+    // ...
+    // 6 : f + fl + flo + flow + flowe + flower
+  
+    
+    // ('abc')
+    // ''
+    // '' + a -> result + str[0]
+    // '' + a + ab -> result + str[0] + str[0] + str[1]
+    // '' + a + ab + abc -> result + str[0] + str[0] + str[1] + str[0] + str[1] + str[2]
+    // 첫번째 반복문, 몇번을 더할까? i가 str의 길이가 될 때까지 더한다
+    // 0번째 인덱스 시작해서 입력받은 문자열의 마지막 글자르 뺀 것 미만을 돌아 변수에 담아
+    // 
+    // 두번째 반복문, 몇개의 문자를 더해줄까? j가 i와 같이 작을 때까지 더한다. 
+    // 가로로 읽었을 때 첫번째 반복문을 제외한 
+  
+  
+    let result = '';
+    // 첫번째 반복문은 반복횟수 결정 => str 길이
+   
+    for(let i = 0; i < str.length; i++) {
+       // 두번째 반복문 => 몇 개의 문자를 더할 건가?
+      for (let j = 0; j <= i; j += 1) {
+        result = result + str[j]
+        // i = 0, j = 0 -> str[j] 'f'
+        // i = 0, j = 1 => 내부 반복문 종료
+        // i = 1, j = 0 => str[j] 'f' 'ff'
+        // i = 1, j = 1=> str[j] 'f' 'ffl'
+        // i = 1, j = 2 => 내부 반복문 종료
+        // ..
+        // i = 5, j = 5 => str[j] 'r'. 
+      }
+    }
+    return result;
+  }
+</body>
+</html>

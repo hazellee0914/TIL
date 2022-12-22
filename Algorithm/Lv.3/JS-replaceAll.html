@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>replaceAll</title>
+</head>
+<body>
+  function replaceAll(str, from, to) {
+    // 출력값은 string이기 때문에 변수 result에 빈 문자열을 할당!!
+    // for 구문 내에서 if  
+    // for구문은 초기값 i가 0이고 str의 길이가 i보다 클때까지 i는 1씩 증감!!
+    // if 문은 str의 i번째 인덱스가 from과 같다면 그렇지 않은 else 
+  
+    // result는 str 대신 새로 채울 빈 문자열, loop 를 예시로 들면
+    // str[0] 'l', if(str[i] === from)  걸리지 않은 => else 들어가서 그대로 '1' 출력
+    // str[1] '0', if(str[i] === from)  걸림 => str[1] 자리에 from 대신 to가 들어감 => 'e' 출력
+    // str[2] '0'. => e
+    // str[3] 'else' => 'p' 
+  
+  
+    let result = '';  // 새로운 문자열 재배열 시켜야해서 
+    for (let i = 0; i < str.length; i++) {
+      if(str[i] === from){
+        result = result + to;  // to 바뀐 문자열 
+      } else {
+        result = result + str[i];  // from  없으면 그대로 출력
+      }
+    }
+    return result;
+  }
+  
+</body>
+</html>

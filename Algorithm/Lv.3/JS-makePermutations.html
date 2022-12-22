@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>makePermutations</title>
+</head>
+<body>
+  function makePermutations(str) {
+    // 입력 : '123'
+    // 출력 : '11,12,13,21,22,23,31,32,33'
+     // 주사위
+    // double for loop
+    // i 의 초기값 0 주고 문자열길이 미만 반복
+    // j의 초기값 0 주고 문자열 길이 미만 반복
+    // i가 0번째  두번재 반복문 넘어가기
+    // 템플릿 스프릿  통해 변수 더하기
+    // j는 길이 미만으로 진행하기 때문에 i 값 그대로 j 값만 변수 넣기
+    // slice  마지막 글자 뺀 거 출력
+  
+    let result = '';
+    for (let i = 0; i < str.length; i++) {
+      for (let j = 0; j < str.length; j++) {
+        // i = 0, j = 0 -> '11'
+        // i = 0, j = 1 -> '11', '12'
+        // i = 0, j = 2 -> '11', '12', '13'
+        // i = 1, j = 0 
+        // i = 1 , j = 1
+        result = result + `${str[i]}${str[j]},`;
+      }
+    }
+    // '1234 ' =-> 길이가 4
+    // '1234'.slice(0, 3)
+    return result.slice(0, result.length - 1);//잘라내기, 오려두기
+    // result의 길이보다 -1이면 맨 끝에 있는 문자
+    // 마지막에 있던 콤마만 제외하고 오려두기 
+  }
+</body>
+</html>

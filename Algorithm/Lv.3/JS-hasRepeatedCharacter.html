@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hasRepeatedCharacter</title>
+</head>
+<body>
+  function hasRepeatedCharacter(str) {
+    // 입력 :'codestates'
+    // 출력 : boolean
+  
+    // 첫번째 문자랑, 두번째 문자비교
+    // 첫번째 문자랑, 세번째 문자 비교
+    // 첫번째 문자랑, 네번째 문자 비교
+    // ...
+    // 마지막에서 앞 문자랑, 마지막 문자 비교
+
+    for(let i = 0; i < str.length; i++){   // 기준이 될것을 전체 돌림
+    // i = 0,  str[0] => 'c'
+    // j = 01 str [0] => 'd'  .... j가 0이 되면 안된다.
+      for(let j = i + 1; j < str.length; j++) {   // i가 c 라면 들어가려면
+        if(str[i] === str[j]) {
+          return true;
+        }
+      }
+    }
+    return false;
+  
+  }
+</body>
+</html>
