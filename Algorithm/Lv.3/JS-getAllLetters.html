@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getAllLetters</title>
+</head>
+<body>
+  function getAllLetters(str) {
+    // str.split('') -> for loop
+    // 빈 배열 하나 만들어 놓고,
+    //  str의 글자들을 순회하면서 순서대로 추가(push)한다.
+    
+    // 'Radagast'
+    //  ['R', 'a', 'd', 'a', 'g', 'a', 's', 't']
+    // 출력이 배열이니깐 변수 선언하고 배열을 할당
+    
+    let arr = [];
+    for (let i = 0; i < str.length; i++) {
+      // i = 0, str[i] = 'R'
+      // i = 1, str[i] = 'a'
+      arr.push(str[i])
+      // 문자열도 유사 배열.
+     }
+     return arr;
+    } 
+    
+</body>
+</html>
