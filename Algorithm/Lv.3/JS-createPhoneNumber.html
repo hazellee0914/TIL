@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>createPhoneNumber</title>
+</head>
+<body>
+  function createPhoneNumber(arr) {
+    // 입력 : 숫자를 배열로
+     // 배열의 길이 -> 8 또는 11
+     // 만약 입력이 [0, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8]이면
+     // 출력은 '(010)1234-5678' 이 형태로 리턴되야함 
+    
+     // 경우의 수가 나눠져 있기 때문에 어렵다. -> 8자리, 11자리의 경우
+     // 11자리가 일반적인 입력값이라고 보고 11자리인 경우를 해결하고
+     // 조건문으로 8자리인 경우를 따로 해결 
+    
+      // 배열의 길이가 8인 경우, 앞에 [0,1,0]
+      // if(arr.length === 8){
+      //   arr.join('');
+      //   num1 = arr.slice(0,4);
+      //   num2 = arr.slice(4);
+      //   return `(010)${num1.join('')}-${num2.join('')}`;
+      // }
+        // 배열의 길이가 11인 경우
+        // '(0번째 요소 ~ 2번째 요소) 3번째 요소 ~ 6번째 요소 ~ 7번째 요소 ~ 11번째 요소'
+        // `(${0~2})`${3~6} ${7~11}`
+        // 원본 배열에서 복사한 다음, 복사한거 문자열로 변환
+    
+        let first = arr.slice(0, 3).joun(''); // [0, 1, 0]. -> '010'
+        let second = arr.slice(-8, -4).join('');  // '1234'
+        let third = arr.slice(-4).join(''); // '5678'
+        
+        if (arr.length === 8) {
+          first = '010';
+          // second = arr.slice(0, 4).join('');
+          // third = arr.slice(4).join('');
+        }
+    
+      return `(${first})${second}-${third}`;
+</body>
+</html>
