@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fibonacci</title>
+</head>
+<body>
+  function fibonacci(num) {
+    // 숫자를 입력받아서 num번째 피보나치 수열을 리턴
+    // 1. 피보나치 수열을 담아줄 배열을 하나 만든다
+    // 2. 반복문을 num회 반복하면서
+    // 3. 두 수의 합이 다음 숫자가 되야함 -> 두 개의 숫자는 반드시 필요하다
+    // 4. 다음 수 = 맨 끝에 있는 수 + 그 앞에 있는 수
+  
+    let arr = [];
+    for (let i = 0; i <= num; i++) { 
+    // i <= num인 이유는, i가 2인 경우를 넣어줘야 newArr[i - 2 → 0] + newArr[i - 1 → 1] 때문
+      if (i === 0 || i === 1) {
+        // 0부터 시작하는데 0이거나 1이면 arr에 바로 push
+        arr.push(i);    // i = 0, i = 1
+        // arr = [0, 1]
+      } else {
+        // 3. 두개 더해서 다음 숫자 반복해서 넣어준다 (push)
+        // i = 2; arr.push(arr[0] + arr[1]) => [0, 1, 1]
+        // i = 3; arr.push (arr[1] + arr[2]) => [0, 1, 1, 2]
+        // i = 4; arr.push (arr[2] + arr[3]) => [0, 1, 1, 2, 3]
+  
+        // ...
+  
+        arr.push(arr[i - 2] + arr[i - 1]); // i가 2일 때 부터
+      }
+    }
+    return arr;
+  } 
+  // 최소한 두 개는 있어야 더할 수 있기 때문에 i가 0, 1인 경우는 그냥 push
+  // arr[-1]은 undefined
+  
+  
+</body>
+</html>
