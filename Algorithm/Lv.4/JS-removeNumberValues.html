@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>removeNumberValues</title>
+</head>
+<body>
+  function removeNumberValues(obj) {
+    // 결과값이 숫자인 속성값을 제거하는 함수
+    // for in 반복문 : 객체 모든 열거 가능한 속성에 대한 반복
+    // for of 반복문 : [Symbol.iterator] 속성 가진 이터러블 배열
+    // if 조건문, typeof 작성
+
+    for (let prop in obj) {
+      if(typeof obj[prop] === 'number') {
+        delete obj[prop];
+      }
+    }
+
+}
+
+</body>
+</html>
