@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getElementOfArrayProperty</title>
+</head>
+<body>
+  function getElementOfArrayProperty(obj, key, index) {
+    let arrProperty = obj[key];
+  
+    // if 문으로 키가 배열인지 판단!!
+    // 배열이 맞으면 index에 해당하는 el 리턴
+    
+    if (!Array.isArray(arrProperty)) {
+      return undefined;
+    }
+    return arrProperty[index];
+  }
+  
+</body>
+</html>
