@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>select</title>
+</head>
+<body>
+  function select(arr, obj) {
+    // const str = ['a', 'c', 'e']
+    // const obj = {a:1, b:2, c:3, d:4}
+    // 배열의 요소가 객체의 키로 있으면, 그 키와 값을 새로운 객체에 넣음
+    // 배열의 요소와 객체의 키를 각각 비교 => 문자열 가지고 두 문자열 중복된거 확ㅇ니 -> 이중 반복문
+    
+      let result = {};  // 객체
+      // for(let i = 0; i <= arr.length; i++) {
+        
+        for (let word of arr) { 
+          for(let key in obj) {
+            // obj 의 a란ㄴ 키와, arr 의 각 요소 비교
+            if (key === word){
+            result[key] = obj[key];
+            }
+          }
+        }
+      return result;
+    
+    }
+</body>
+</html>
