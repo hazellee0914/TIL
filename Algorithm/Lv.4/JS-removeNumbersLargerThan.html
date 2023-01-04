@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>removeNumbersLargerThan</title>
+</head>
+<body>
+  function removeNumbersLargerThan(num, obj) {
+  
+    // 1. for문을 활용하여 객체 모든 요소를 순회하도록 한다.
+    // 2. if() number type이고 num보다 큰 지 판단한다.
+    // 3. true가 나오면 속성을 제거한다.
+  
+    for(let el in obj) {
+      
+      
+      if(typeof(obj[el]) === 'number' && obj[el] > num) {
+          delete obj[el];
+  
+      }
+    }
+  }
+  
+</body>
+</html>
