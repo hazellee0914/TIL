@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>printObject</title>
+</head>
+<body>
+  function printObject(obj) {
+    // 객체 안에 정의 된 키와 값 쌍 조합 문자열 리턴
+    // 키: 값 와 공백 함께 리턴
+    // for ...in  
+  
+  
+    let print = '';
+    for(let prop in obj) {
+      // print = print + prop + ': ' + obj[prop] + '\n';
+      print = print + `${prop}: ${obj[prop]}\n`;
+  
+    }
+    return print;
+  }
+  
+  
+</body>
+</html>
