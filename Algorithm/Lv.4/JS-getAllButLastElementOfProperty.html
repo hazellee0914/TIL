@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getAllButLastElementOfProperty
+  </title>
+</head>
+<body>
+  function getAllButLastElementOfProperty(obj, key) {
+    // 마지막 요소
+    // 빈 배열이 아닌 경우에만 요소가 제거된 배열 리턴
+    // 그외 빈 배열 리턴
+    
+    let print = [];
+    let prop = obj[key];
+  
+    if(Array.isArray(prop) && prop.length !== 0) {
+      print = prop.slice(0, prop.length - 1)
+      return print;
+    } else {
+      return print;
+    }
+  }
+</body>
+</html>
