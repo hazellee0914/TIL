@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>extend</title>
+</head>
+<body>
+  function extend(obj1, obj2) {
+    // obj1에 obj2에 있는 키가 없으면 obj
+  
+    let result = Object.assign(obj2, obj1);
+    
+    // 그러면 중복되는 여부 확인후 합치기
+    // 두번째 객체를 반복 -> 프로퍼티를 모두 obj1에 추가
+    // 조건: 첫번째에 이미 있으면 제외
+    for ( let key in obj2 ) { 
+      if (!obj1[key]) {
+        obj1[key] = obj2[key];
+      }
+    }
+  }
+</body>
+</html>
