@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>countAllCharacters</title>
+</head>
+<body>
+  function countAllCharacters(str) {
+    // 입력 : 문자열 'banana'
+    // 출력 : 객체 {b:1, a:3, n:2} => { 문자열의 각 문자 : 나온 횟수 }
+    
+    // 1. 리턴할 객체를 하나 만들기 
+    // 2. str의 모든 문자열을 순회하는 반복문을 만들기
+      // 2-1. 각 문자를 키고, 값을 0으로 한 객첼르 먼저 만들기 {b:0, a:0, b:0}
+      // -> 그 문자가 아직 키로 생성되지 않을 때 -> in
+    // 3. 다시 순회하면서 문자가 등장할 때 마다 1씩 증가
+    
+     // for loop. = for...in of
+    
+      let obj = {};
+      for (let i = 0; i < str.length; i++) {
+        // str[0] -> 'b'
+        // str[1] -> 'a'
+        // str[2] -> 'n'
+        // str[3] -> 'a'
+        // str[4] -> 'n'
+        // STR[5] -> 'a'
+        if (!str[i] in obj) {
+          obj[str[i]] = 0;   // {b:0, a:0, n:0}
+        // if(!(obj[str[i]])) {
+          // obj[str[i]] = 1; 
+        } else {
+          obj[str[i]]++;  // {b:1, a:2, n:2}
+        }
+      }
+      return obj;
+    
+    }
+    
+</body>
+</html>
