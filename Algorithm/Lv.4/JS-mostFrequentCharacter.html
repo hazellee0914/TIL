@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mostFrequentCharacter</title>
+</head>
+<body>
+  function  mostFrequentCharacter(str) {
+    // 20번 : 객체만 만들면 된다.  // 21번은 : 어떤 문자가 가장 많이 나왔는지 리턴
+    // {b:1, a:3, n:2} -> a
+    // 20번 + 가장 많이 나온거 찾기 =>? 비교 대상 하나 만들어 놓고 비교해서, 교체
+  
+    // str = 'banana'
+    // obj = {b:1, a:3, n:2} 이렇게 만들어준다 
+    // 비교대상 미리 만들어 놓고
+    // 그거보다 커지면 교체
+  
+  
+    let mostChar = '';
+    let mostCount = 0;
+    let obj = {};
+    for(let i = 0; i < str.length; i++) {
+       // 공백이 나오면 건너 뛴다 (continue)
+      if (str[i] === ' '){
+        continue;
+      }
+      if(!(str[i] in obj)){
+        obj[str[i]] = 0;
+      }
+       obj[str[i]]++; /// {b:1, a:3, n:2}
+  
+      if(obj[str[i]] > mostCount) {
+         mostCount = obj[str[i]];  // 1
+         mostChar = str[i];        // 'b'
+      }
+    }
+    return mostChar;
+  }
+  
+  // 반복문 돌리다가 공백이 나와서 건너 뛴다  
+  // => break > 공백나오면 반복문 종료
+  // continue -> 이번 횟수만 건너 뛴다.
+
+</body>
+</html>
