@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>computeWhenDouble
+  </title>
+</head>
+<body>
+  function computeWhenDouble(interestRate) {
+    // 연이율 입력 받아
+    // 원금이 2배 이상이될 때까지
+    // 걸리는 시간(년)을 리턴
+    // number 타입의 연이율
+    // number 타입을 리턴
+  
+    // 10000 -> 2% 이자 -> 200원 => 총 10,200원
+    // 10000 -> 1.02 => 10,200
+  
+    // (원금+이자율) ^년 = 2
+    // 원금 = 원금 * 이자
+  
+    let x = 1;   // 원금 x
+    let year ;   //2배가 되는 시점
+    let inerest = interestRate / 100;  // 이자율 100으로 나눠 변수 할당
+    for(let i = 1; x < 2; i++) {
+      // 원금 x가 2가 될때까지 for loop 반복
+      x = x * (1 + inerest);
+      year = i;
+    }
+    return year;
+  }
+  
+  // 원금 2배가 되는 시점을 구하는 문제 즉 x를 원금이라고 가정하고 1을 할당한 후 할당된 1이 2가 된다면 그 순간이 원금의 2배가 되는 시점
+</body>
+</html>
