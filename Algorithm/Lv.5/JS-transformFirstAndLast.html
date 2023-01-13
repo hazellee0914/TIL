@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transformFirstAndLast</title>
+</head>
+<body>
+  function transformFirstAndLast(arr) {
+    // 배열의 첫 요소와 마지막 요소를 키와 값
+    // 객체 리턴
+    // string 타입
+  
+    let result = {};
+    // 배열 arr 길이 까지 반복
+    for (let i = 0; i < arr.length; i++) {
+      // 키 속성 안에 마지막 문자열 인덱스 대입
+      result[arr[0]] = arr[arr.length -1]
+    }
+    // 배열 리턴
+    return result
+  }
+</body>
+</html>
