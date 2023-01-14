@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>compose</title>
+</head>
+<body>
+  function compose(func1, func2, num) {
+    // num 에 가까운 순서대로 리턴
+    return func1(func2(num));
+  }
+</body>
+</html>
