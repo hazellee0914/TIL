@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pipe</title>
+</head>
+<body>
+  function pipe(...funcs) {
+    // 차례대로 결합된 새로운 함수 리턴
+  
+    return function(num) {
+      for (let i = 0; i < funcs.length; i++) {
+        num = funcs[i](num);
+      }
+      return num;
+    }
+  }
+</body>
+</html>
