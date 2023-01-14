@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>callbackOnly</title>
+</head>
+<body>
+  function callbackOnly(callback, response) {
+    // 함수와 객체 입력
+    // 객체의 'status' 속성값이 'fail'인 경우,
+    // 'Something went wrong!'을 리턴
+    // 객체의 'status' 속성값이 'success'인 경우,
+    //'data' 속성값에 입력받은 함수를 적용한 결과를 리턴
+  
+  
+    if(response.status === 'success') {
+      return callback(response.data);
+    } else {
+      return 'Something went wrong';
+    }
+  }
+</body>
+</html>
