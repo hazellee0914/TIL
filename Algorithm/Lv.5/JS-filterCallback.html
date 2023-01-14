@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filterCallback</title>
+</head>
+<body>
+  function filterCallback(func, arr) {
+    // 각 요소에 함수적용했을 대 그 결과 참인 요소만 새로운 배열 리턴
+  
+    let result = [];
+    for (let el of arr) {
+      if (func(el)) {
+        result.push(el);
+      }
+    }
+    return result;
+  }
+</body>
+</html>
