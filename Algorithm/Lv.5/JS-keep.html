@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keep</title>
+</head>
+<body>
+  function keep(arr, keeper) {
+    // keeper 입력
+    // 기존 배열에서 keeper 와 일치하는 요소만 새로운 배열 리턴
+  
+    return arr.filter(function(el){
+      if (el === keeper) {
+        return true;
+      }
+      return false;
+    })
+  }
+</body>
+</html>
