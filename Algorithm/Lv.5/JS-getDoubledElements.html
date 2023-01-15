@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getDoubledElements</title>
+</head>
+<body>
+  function getDoubledElements(arr) {
+    // 각 요소를 2배 곱한 새로운 배열 리턴
+    let double = function(arr1) {
+     return arr1 * 2; //들어온 요소에 2를 곱하기
+    }
+       //배열 arr를 double 함수에 씌어진 조건으로 지정한다.
+    let output = arr.map(double);
+    return output;
+  
+      // function getDoubledElements(arr) {
+      //  return arr.map(function (el) {
+      //     return el * 2;
+      //   });
+      // }
+  
+  }
+</body>
+</html>
