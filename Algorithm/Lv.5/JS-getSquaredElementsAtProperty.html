@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getSquaredElementsAtProperty</title>
+</head>
+<body>
+  function square(number) {
+    return number * number;
+  }
+  
+  function getSquaredElementsAtProperty(obj, property) {
+    // 배열의 각 요소를 제곱한 새로운 배열을 리턴
+  
+    let arr = obj[property];
+    if(Array.isArray(arr)) {
+      return arr.map(el => square(el));
+    }
+    else return [];
+  }
+  
+</body>
+</html>
