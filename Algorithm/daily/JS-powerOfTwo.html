@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>powerOfTwo</title>
+</head>
+<body>
+  function powerOfTwo(num) {
+    // 2의 거듭제곱인지 여부를 리턴
+    // n이 1일 때는 2의 0승 => true
+    // 2로 나눠서 나머지가 1이면 false
+    // 나눠서 1이면 거듭제곱
+    let result = false;
+    if(num === 1 || num === 2) {
+      // 1 또는 2이면 결과값을 true
+      return true;
+    }
+    while (num > 0) {
+      // 반복문이 0보다 크면 실행!
+      num = num / 2;
+      if (num & 2 === 0) {
+        // 2로 나눠서 나머지가 0이면 패스
+        continue
+      } if (num & 2 === 1) {
+        // 2로 나눠서 나머지가 1이면
+        result = false;
+      } if (num == 1) {
+        // 2로 나눠서 num 1이 되면 2의 거듭제곱 
+        result = true;
+      }
+    }
+    return result;
+  }
+</body>
+</html>
