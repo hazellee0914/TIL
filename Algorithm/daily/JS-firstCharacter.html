@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>firstCharacter</title>
+</head>
+<body>
+  function firstCharacter(str) {
+    // 각 단어의 첫글자로 이루어진 문자열 리턴
+    // 단어는 공백 한 칸
+    // 연속된 공백 없다고 가정
+    // 빈문자열 입력 받을시 빈문자열 리턴
+    let start = str.split(' ')
+    let result = ''
+    if(str === '') {
+      return ''
+    }
+    for(i = 0; i < start.length; i++){
+      result = result + start[i][0]
+    }
+  
+    return result
+  }
+  
+</body>
+</html>
