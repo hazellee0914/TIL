@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>letterCapitalize</title>
+</head>
+<body>
+  function letterCapitalize(str) {
+    // 각 단어의 첫 글자가 대문자인 문자열 리턴
+    // slice(1), charAt(0), replace(), 정규표현식으로 첫글자 대문자 변환
+  
+    return str.replace(/\b[a-z]/g, char => char.toUpperCase());
+  }
+  
+</body>
+</html>
