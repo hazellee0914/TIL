@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getOnlyAllowedToDrink</title>
+</head>
+<body>
+  function getOnlyAllowedToDrink(arr) {
+    // 18세 이상인 사람의 
+    // 이름의 요소를 갖는 배열 리턴
+    let person = arr.filter(function(el){
+      if(el.age >= 18){
+        return el;
+      }
+    });
+    return person.map(el => el.name);
+  }
+  
+</body>
+</html>
