@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classicMovies</title>
+</head>
+<body>
+  function classicMovies(arr, year) {
+    // 영화 정보가 담긴 객체 배열과 연도를 입력 받고
+    // 해당 연도 이전의 영활르 요소로 갖는 배열 리턴
+    // string 타입 배열 리턴
+    // 영화 제목 by 영화 감독 형태
+  
+    const beforeYear = arr.filter(function(movie){
+      return movie.year < year;
+    });
+    return beforeYear.map(function(movie){
+      return `${movie.title} by ${movie.director}`;
+    });
+  }
+</body>
+</html>
