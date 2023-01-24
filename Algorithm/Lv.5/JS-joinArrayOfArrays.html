@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>joinArrayOfArrays
+  </title>
+</head>
+<body>
+  function joinArrayOfArrays(arr) {
+    // 배열들의 모든요소를 담고 있는 단일 배열 리턴
+    // 1까지 단일 배열로 이어붙인 배열 리턴
+  
+    return arr.reduce((acc, cur) => {
+      return acc.concat(cur);
+    });
+  }
+  
+</body>
+</html>
