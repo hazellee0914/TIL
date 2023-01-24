@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getLongestElement</title>
+</head>
+<body>
+  function getLongestElement(arr) {
+    // 가장 긴 문자열 리턴
+    // 중복이 될경우 앞쪽 요소리턴
+    // 빈 배열은 빈문자열로 리턴 -> ''
+  
+    return arr.reduce((acc, cur) => {
+      if(acc.length >= cur.length) {
+        return acc;
+      }
+      else return cur;
+    }, '');
+  }
+</body>
+</html>
