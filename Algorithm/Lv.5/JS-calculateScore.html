@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculateScore</title>
+</head>
+<body>
+  function calculateScore(records, value) {
+    // 객체를 요소로 갖는 배열
+    // 문자열을 받는 요소
+    // animal속성값이 문자열과 일치
+    // 해당 요소 score 속성값을 모두 더한 값을 리턴
+    // 빈 배열은 0 리턴
+    
+    let sum1 = records.filter(el => el.animal === value);
+    let sum2 = sum1.map(el => el.score);
+    return sum2.reduce((acc, cur) => {
+      return acc + cur;
+    }, 0); 
+  }
+</body>
+</html>
