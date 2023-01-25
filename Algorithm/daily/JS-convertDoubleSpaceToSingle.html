@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>convertDoubleSpaceToSingle</title>
+</head>
+<body>
+  function convertDoubleSpaceToSingle(str) {
+    // 문자열을 입력받아 문자열 공백 두칸을 -> 한칸으로 바꿔 리턴
+    // split() 두칸 기준으로 쪼개기
+    // join() 한칸으로 조인
+    arr = str.split('  ');
+    return arr.join(' ');
+  }
+  
+</body>
+</html>
