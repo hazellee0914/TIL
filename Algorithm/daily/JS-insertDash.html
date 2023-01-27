@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>insertDash</title>
+</head>
+<body>
+  function insertDash(str) {
+    // 홀수 숫자 사이에 "-" 추가한 문자열 리턴
+    let result = '';
+    for(let i = 0; i < str.length; i++){
+      result = result + str[i]; // 숫자(문자열) 하나씩 추가
+      if(str[i] % 2 === 1 && str[i + 1] % 2 === 1){ // 추가하다가 그 숫자가 홀수이고, 그 다음열도 홀수이면
+        result = result + '-'; 
+      }
+    }
+    return result;
+  }
+</body>
+</html>

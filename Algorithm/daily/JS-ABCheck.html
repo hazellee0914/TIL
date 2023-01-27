@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  function ABCheck(str) {
+
+    if(str === ''){
+      return false;
+    }
+  
+    str = str.toLowerCase();
+  
+    for(let i = 0; i < str.length; i++){
+      if((str[i] === 'a' && str[i + 4] === 'b') || 
+        (str[i] === 'b' && str[i + 4] === 'a')){
+        return true;
+      }
+    }
+    return false;
+  
+  }
+</body>
+</html>
