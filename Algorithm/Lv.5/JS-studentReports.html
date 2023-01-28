@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>studentReports</title>
+</head>
+<body>
+  function studentReports(students) {
+    // 남학생들이 정보는 리턴하는 배열에서 제외
+    // grades 속성값과 평균값 number 바꿈
+    
+    let filtered = students.filter((el) => {
+      return el.gender === 'female';
+    });
+    return filtered.map((el) => {
+      let sum = el.grades.reduce((acc, cur) => {
+        return acc + cur;
+      });
+      let avg = sum / el.grades.length;
+      el.grades = avg;
+      return el;
+    });
+  }
+</body>
+</html>
