@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sumOfArraysInArray</title>
+</head>
+<body>
+  function sumOfArraysInArray(arr) {
+    // 모든 수 합을 리턴
+    
+    
+    let strArr = arr.reduce((acc, cur) => {
+        return acc.concat(cur);
+      });
+    
+      let numArr = strArr.filter((el => typeof el === 'number'));
+    
+      return numArr.reduce((acc, cur) => {
+        return acc + cur;
+      }, 0);
+    }
+</body>
+</html>
