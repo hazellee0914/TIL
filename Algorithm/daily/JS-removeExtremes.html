@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>removeExtremes</title>
+</head>
+<body>
+  function removeExtremes(arr) {
+    // 가장 짧은 길이의 인덱스 값
+    // 그 인덱스 값 제외하고 하나씩 푸쉬
+    // splice()??
+  
+    let min = arr[0];
+    let max = arr[0];
+  
+    for (i in arr) {
+      if(arr[i].length <= min.length) min = arr[i];
+      if(arr[i].length >= max.length) max = arr[i];
+      
+    }
+  
+    arr.splice(arr.indexOf(min), 1);
+    arr.splice(arr.indexOf(max), 1);
+  
+    return arr;
+  }
+  
+</body>
+</html>
