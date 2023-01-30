@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>findBugInApples</title>
+</head>
+<body>
+  function findBugInApples(arr) {
+    // 2차원 배열 입력 받아 'B' 위치 정보를 요소로 갖는 배열 리턴
+    // 배열을 돌면서 'B'찾기 -> inclues(), indexOf()???
+    // 찾으면 true 아니면 fasle
+    for(let i = 0; i < arr.length; i++){
+      if(arr[i].includes('B')){
+        let index = arr[i].indexOf('B');
+        return [i, index];
+      }
+    }
+  }
+  
+  //  for (let i = 0; i < arr.length; i += 1) {
+  //     for (let j = 0; j < arr[i].length; j += 1) {
+  //       if (arr[i][j] === 'B') {
+  //         return [i, j];
+  //       }
+  //     }
+  //   }
+  // }
+</body>
+</html>
