@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>modulo</title>
+</head>
+<body>
+  function modulo(num1, num2) {
+    // num1를 num2로 나눈 나머지 리턴
+    // 나눗셈(/), 나머지(%) 연산자 사용은 금지
+    if(num2 === 0) return 'Error: cannot divide by zero'
+    else {
+      while(num1 >= num2){
+        num1 = num1 - num2;
+      }
+    }
+  
+    return num1;
+  }
+  
+</body>
+</html>
