@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>superIncreasing</title>
+</head>
+<body>
+  function superIncreasing(arr) {
+    // 수를 요소로 갖는 배열 
+    // 그 이전의 요소들의 합보다 큰지 여부
+    // 불린 타입
+    // arr[i]는 arr[0]부터 arr[i-1]까지의 합보다 커야 함.
+    // sum...for loop..if...
+    let sum = arr[0];
+    for(let i = 1; i < arr.length; i++) {
+      if (arr[i] <= sum){
+        return false
+      }
+      sum += arr[i];
+    }
+    return true;
+  }
+</body>
+</html>
