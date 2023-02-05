@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>isIsogram</title>
+</head>
+<body>
+  function isIsogram(str) {
+    // 아이소그램인지 여부 리턴
+    // 각 알파벳을 한번씩만 이용해 만든 단어나 문구
+    // 불린 타입 리턴
+    // 빈 문자열은 true 리턴
+    // 대소문자 구별 하지 않음
+  
+    return !str.match(/([a-z]).*\1/i);
+  }
+  
+    // match(): 문자열의 처음부터 정규식과 매치되는 문자를 검색하고, 배열로 반환한다.
+    // .: 개행 문자를 제외한 모든 문자와 대응
+    // *: 0회 이상 연속으로 반복되는 부분과 대응
+    // \n: 개행 문자를 찾는데 사용되므로 문자가 발견된 위치를 반환, 일치하는 항목이 없는 경우 -1을 돌려준다.
+    //i: 대소문자 구분 없는 검색
+  
+  // function isIsogram(str) {
+  //  let arr = str.toLowerCase().split('').sort();
+    
+  //    for (let i = 0; i < arr.length - 1; i++) {
+  //       if (arr[i] === arr[i + 1]) {
+  //          return false;
+  //       }
+  //    }
+  //    return true;
+  // }
+</body>
+</html>
