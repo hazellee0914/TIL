@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>computeSquareRoot</title>
+</head>
+<body>
+  function computeSquareRoot(num) {
+    // 제곱근 값을 소수점 두 자리 리턴
+    // Math.sqrt 사용 금지
+    // number 타입을 리턴
+    // Babylonian method ??
+    
+    let approxi = 1
+    while (approxi ** 2 !== num) {
+      if(Number((approxi*approxi).toFixed(2)) === num){
+        break;
+      }
+      approxi = (approxi + (num/approxi)) / 2 ;
+    }
+    return Number(approxi.toFixed(2))
+  }
+</body>
+</html>
