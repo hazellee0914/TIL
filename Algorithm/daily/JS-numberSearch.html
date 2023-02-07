@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>numberSearch</title>
+</head>
+<body>
+  function numberSearch(str) {
+    // 문자열에서 숫자를 모두 찾아 더한 뒤.  => for loop
+    // 해당 값을 문자열의 길이로 나눈 값
+    // 정수로 반올림하여 리턴  => round
+    // 숫자와 공백을 제외한 나머지
+    // 빈 문자열은 0으로 리턴 
+    // 숫자는 연속해서 등장하지 않음
+  
+    let strLength = 0;
+    let sum = 0;
+  
+    if(str.length === 0) return 0;
+    
+    for(let i = 0; i < str.length; i++){
+      let newNum = Number(str[i]);
+      if(isNaN(newNum)) strLength++;
+      else sum += newNum;
+    }
+  
+    return Math.round(sum / strLength);
+  
+  }
+  
+  // function numberSearch(str) {
+  //   const digits = '0123456789';
+  
+  //   if (str === '') {
+  //     return 0;
+  //   }
+  
+  //   let sum = 0;
+  //   let pureStr = '';
+  //   for (let i = 0; i < str.length; i += 1) {
+  //     if (digits.includes(str[i])) {
+  //       // 숫자인 경우
+  //       sum = sum + Number(str[i]);
+  //     } else if (str[i] !== ' ') {
+  //       // 숫자도 공백도 아닌 경우
+  //       pureStr = pureStr + str[i];
+  //     }
+  //   }
+  
+  //   // 결과를 반올림 한다.
+  //   return Math.round(sum / pureStr.length);
+  // }
+  
+</body>
+</html>
