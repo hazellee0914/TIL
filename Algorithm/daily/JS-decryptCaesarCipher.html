@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>decryptCaesarCipher</title>
+</head>
+<body>
+  function decryptCaesarCipher(str, secret) {
+    // 문자열과 암호화 킬르 입력 받아 => 암호환된 str 입력?
+    // str 복호화 => 알파벳 -> 배열로 선언, 초기화?
+    // str 순회 -> [i]
+    // 암호, 평문, 암호키를 오른쪽으로 평행이동 시켜 암호화
+    // 빈문자열은 빈문자열로 리턴
+    // 공백은 그대로 
+  
+      let newStr = '';
+      // str을 split으로 다 자른다.
+      let splitStr = str.split('')
+      // 자른 newStr에 for...of로 모든 배열들을 다 찾아서
+      for(let i of splitStr) {
+        // 만약 빈칸이면
+          if(i === ' ') {
+            // 빈칸을 넣고
+            newStr = newStr + ' '
+            } else {
+              // 만약 아스키 코드 표에서 소문자가 되는 97을 넘으면 맞으면, secret이동 후에 - 122(최대 숫자) 총 알파벳 갯수가 26개 니까 나머지에 122 더한다.
+              // 97보다 작으면, secret이동 후에 - 122 그리고 26 나눠서 나머지에 마찬가지 122 더한다.
+              newStr = newStr + String.fromCharCode((i.charCodeAt(0) > 97) 
+                ? (i.charCodeAt(0) - secret - 122) % 26 + 122 
+                  : (i.charCodeAt(0) - secret - 122) % 26 + 122)
+              };
+      }
+      return newStr;
+  }
+</body>
+</html>
