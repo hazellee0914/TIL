@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compressString</title>
+</head>
+<body>
+    function compressString(str) {
+        // 문자열을 입력받아 연속되는 문자가 있을 경우
+        // 연속 구간을 반복된느 수와 문자로 조합한 형태로 압축한 문자열 리턴
+        // 빈 문자열 -> 빈 문자열
+        // 3개 이상 연속 된느 문자만 압축
+      
+        let result = '';
+        let count = 1;
+        for(let i = 0; i < str.length; i++){
+          if(str[i] === str[i + 1]){ // i : 0 -> count : 2 / i : 1 -> count : 3 		  
+            count++;
+          } else if(count >= 3 && str[i] !== str[i + 1]){
+            result += count + str[i];
+            count = 1;
+          } else{
+            for(let j = 1; j <= count; j++){
+              result += str[i];
+          } 
+            count = 1; 
+          }
+        }
+        return result;   
+      }
+      
+      
+      
+      // function compressString(str) {
+      //   // 연속되는 문자를 기록하기 위한 변수
+      //   // 첫 번째 문자로 초기화
+      //   let before = str[0];
+      
+      //   // 동일한 문자의 반복 횟수
+      //   let count = 1;
+      
+      //   // 정답으로 리턴할 문자열
+      //   let result = '';
+      
+      //   // 마지막 부분이 연속된 문자일 경우를 위해 dummy 문자 추가
+      //   str = str + ' ';
+      //   for (let i = 1; i < str.length; i++) {
+      //     // 동일한 문자가 반복될 경우
+      //     if (before === str[i]) {
+      //       count++;
+      //     } else {
+      //       // 이전과 다른 문자일 경우,
+      //       // 반복된 횟수가 3 이상일 경우에만 압축을 한다.
+      //       if (count >= 3) {
+      //         result = result + `${count}${before}`;
+      //       } else {
+      //         result = result + before.repeat(count);
+      //       }
+      //       before = str[i];
+      //       count = 1;
+      //     }
+      //   }
+      
+      //   return result;
+      // }
+      
+</body>
+</html>
