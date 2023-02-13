@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  function sumTo(num) {
+    // 별도의 최적화 기법(memoization)은 금지됩니다.
+    // num 입력받아 1 ~ num 까지 합을 리턴
+    // sumTo 재귀 함수 형태로 작성
+    // number 타입
+    // 반복문(for, while) 사용은 금지됩니다.
+    // n * (n + 1) / 2 와 같은 공식의 사용은 금지
+    // 음수 입력은 들어오지 않는다
+  
+    // sumTo(5) => 5 + sumTo(4)
+    // sumTo(4) => 4 + sumTO(3)
+    // sumTo(3) => 3 + sumTo(2)
+    // ..
+    sumTo(num) -> num + sumTo(num-1)
+    // sumTo(0) => 0
+  
+    if(num === 0) {     // num 0일 경우
+      return 0          // 0 리턴
+    } else {        // 0이  아니면
+      return num + sumTo(num - 1)  // sumTo 재귀 -> 0이 될때까지 돌리기.
+    }
+  
+</body>
+</html>
