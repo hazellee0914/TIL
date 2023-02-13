@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>factorial</title>
+</head>
+<body>
+  function factorial(num) {
+    // 별도의 최적화 기법(memoization)은 금지됩니다.
+    // 수를 입력받아 n-factorial 값 리턴
+    // n! 은 1부터 n까지 1씩 증가한 모든 값의 곱
+    // factorial(0)은 1
+    // 음수 입력은 들어오지 않음
+    // number 타입을 리턴해야 합니다.
+    // 1 * 2 * ... * num
+    // n! = 1×2×3×4×...×n
+    // 1 => 1
+    // 2 => 1* 2 => 2
+    // 3 => 1* 2* 3 => 6
+    // 4 => 1*2*3*4 =>24
+  
+    if(num <= 1) return 1;
+    return num * factorial(num - 1)
+    
+  }
+</body>
+</html>
