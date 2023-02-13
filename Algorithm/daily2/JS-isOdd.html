@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>isOdd</title>
+</head>
+<body>
+  function isOdd(num) {
+    // 홀수인지 여부 리턴
+    // boolean 타입 리턴
+    // / , %  연산자 금지
+    // 0 은 짝수로 간주
+    // 1 => 홀수
+    // 2 => 2-2 => 0 => f
+    // 3 => 3-2 => 1 => t
+    // 4 => 4-2 => 2 -2 = 0 => f
+  
+   if (num === 0) {
+      return false;
+    } else if (num === 1) {
+      return true;
+    }
+  
+    if (num < 0) {
+      return isOdd(-num);
+    }
+    return isOdd(num - 2);
+  }
+  
+</body>
+</html>
