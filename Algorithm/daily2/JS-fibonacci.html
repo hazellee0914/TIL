@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fibonacci</title>
+</head>
+<body>
+  function fibonacci(num) {
+    // 별도의 최적화 기법(memoization)은 금지됩니다.
+    // 피보나치수열 => 부분문제를 분할
+    // Fibo = 0, Fibo(1) = 1
+    // Fibo(n) = Fibo(n-1) + Fibo(n-2) (n>=2)
+    // 가장 작은 부분 문제 해를 구하기
+    // 0 => 0
+    // 1 => 1
+    // 2 => 1
+    // 3 => 2
+    // 4 => 3
+    // 5  => 5
+    // n => fibo(n)
+    
+    if(num <= 1) return num;
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  
+  }
+</body>
+</html>
