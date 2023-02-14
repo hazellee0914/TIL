@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>arrProduct</title>
+</head>
+<body>
+  function arrProduct(arr) {
+    // 모든 요소의 곱 리턴
+    //arr[0] * arr[1] * ... * arr[n-1]
+    // arr.length는 n
+    // 입력받은 배열은 함수의 호출 뒤에도 처음 상태를 유지해야 합니다(immutability).
+    // 입력으로 들어오는 arr의 모든 요소는 정수 값을 갖는다고 가정
+    // 빈 배열의 곱은 1
+    // [1, -2, 1, 3] => -6
+    
+      if(arr.length == 0) return 1;     // 빈 배열 
+    
+      // const head = arr[0];      // 0번째 head 할당
+      // const tail = arr.slice(1);   // 0번재 제외 하고 나머지 tail  할당
+      // return head * arrProduct(tail); 
+    
+      return arr.shift() * arrProduct(arr)
+    
+    }
+    
+</body>
+</html>
