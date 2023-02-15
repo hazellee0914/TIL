@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>drop</title>
+</head>
+<body>
+  function drop(num, arr) {
+    // num 와 배열을 입력받아
+    // 차례대로 num 요소가 제거된
+    // 새로운 배열 리턴
+    // num과 arr.length 중 최소값만큼 제거
+    // 2, [1, -2, 1, 3] => [1, 3]
+    // 3, [-1,-2,1,2,3,4,5] => [2,3,4,5]
+    // 4, [-1,-2,1,2,3,4,5] => [3,4,5]
+    // 5, [1, -2, 1, 3] => []
+  
+  
+    if(num === 0) return arr;
+    if(num >= arr.length) return [];
+    return drop(num-1, arr.slice(1))
+  
+    // return arr.slice(num)
+  }
+  
+</body>
+</html>
