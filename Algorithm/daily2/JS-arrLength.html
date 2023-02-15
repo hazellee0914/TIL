@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>arrLength</title>
+</head>
+<body>
+  function arrLength(arr) {
+    // 배열을 입력받아 그 길이 리턴
+    // [ ].isEmpty() === true
+    // [1, 2].isEmpty() === false
+    // 빈 배열의 길이는 0입니다.
+    // ([1, -2, 1, 3] => 4
+  
+    if(arr.isEmpty()) return 0;  // 빈배열 일경우 0
+    const tail = arr.slice(1); // 첫번째 요소 제외 한 나머지 요소 할당
+    return 1 + arrLength(tail);
+  
+    
+  }
+</body>
+</html>
