@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reverseArr</title>
+</head>
+<body>
+  function reverseArr(arr) {
+    // 순서가 뒤집힌 배열
+    // [arr[n-1], arr[n-2], ... , arr[0]]
+    // 빈 배열은 빈 배열 그대로를 리턴해야 합니다.
+    // [1, 2, 3] => [3, 2, 1]
+  
+    if(arr.length === 0) return [];
+    const [a, ...b] = arr;
+    // const a = arr[0];
+    // const b = arr.slice(1);
+    return reverseArr(b).concat(a) 
+  }
+</body>
+</html>
