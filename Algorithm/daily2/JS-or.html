@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>or</title>
+</head>
+<body>
+  function or(arr) {
+    // 논립 합
+    // arr[0] || arr[1] || ... || arr[n-1]
+    // 빈 배열의 논리합은 false
+    // true, true, false
+    
+    if(arr.length === 0) return false;
+    
+    return arr.shift() || or(arr)
+  
+  }
+</body>
+</html>
