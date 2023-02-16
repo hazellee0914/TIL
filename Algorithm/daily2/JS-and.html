@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>and</title>
+</head>
+<body>
+  function and(arr) {
+    // 논리곱
+    // arr[0] && arr[1] && ... && arr[n-1]
+    // arr.length는 n
+    // 빈 배열의 논리곱은 true 입니다.
+    // [true, true, true] => true
+    // [true, true, false] => false
+  
+    if(arr.length === 0) return true;
+  
+    const a = arr[0];
+    const b = arr.slice(1);
+    return a && and(b);
+  
+  }
+</body>
+</html>
