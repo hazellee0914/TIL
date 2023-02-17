@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>findMatryoshka</title>
+</head>
+<body>
+  function findMatryoshka(matryoshka, size) {
+    // 객체와 수 입력
+    // 조건에 맞는지 ?
+    // matryoshka.matryoshka는 null 또는 matryoshka 객체
+    // matryoshka.size는 중첩될수록 작아짐
+   if(matryoshka.size === size) return true;
+   else if (matryoshka.matryoshka && matryoshka.size > size) {
+     return findMatryoshka(matryoshka.matryoshka, size);
+   } else {
+     return false;
+   }
+  
+  
+  
+  }
+</body>
+</html>
