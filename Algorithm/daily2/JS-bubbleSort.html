@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bubbleSort</title>
+</head>
+<body>
+  const bubbleSort = function (arr) {
+    // 정수를 요소로 갖는 배열을 입력 받아 오름차순을 정렬
+    for (let i = 0; i < arr.length; i++) {
+       let swap;
+       for (let j = 0; j < arr.length - 1 - i; j++) {
+         if (arr[j] > arr[j + 1]) {
+           swap = arr[j];
+           arr[j] = arr[j + 1];
+           arr[j + 1] = swap;
+         }
+       }
+       // console.log(`${i}회전: ${array}`);
+       if (!swap) {
+         break;
+       }
+     }
+     return arr;
+   }
+   // console.log(bubbleSort([5, 4, 3, 2, 1]));
+</body>
+</html>
