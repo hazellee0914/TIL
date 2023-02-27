@@ -8,7 +8,7 @@
 </head>
 <body>
   <script>
-      ## 문제 ##
+      // ## 문제 ##
       // - sample이 base의 부분집합인지 확인하기
       // - 입력: base: number[], sample: number[]
       // - 출력: boolean
@@ -56,34 +56,34 @@
 
 
 // Reference code
-      const isSubsetOf = function (base, sample) {
-        // sample이 base 의 부분집한인 여부 리턴
-        // a =[1,2,3,4,5]
-        // b = [1,3]
-        // ture vs false
-        // 오름 차순으로 정렬 => sort(a, b) -=> a -b
-        // 이미 확인한 요소는 다시 확인하지 않는다.
-        // base의 요소를 반복하면서 simple의 요소를 갖고 있지 않는 반복이 있는 순간 반복을 스톱하고 false 반환
-        base.sort((a, b) => a - b);
-        sample.sort((a, b) => a - b);
+//       const isSubsetOf = function (base, sample) {
+//         // sample이 base 의 부분집한인 여부 리턴
+//         // a =[1,2,3,4,5]
+//         // b = [1,3]
+//         // ture vs false
+//         // 오름 차순으로 정렬 => sort(a, b) -=> a -b
+//         // 이미 확인한 요소는 다시 확인하지 않는다.
+//         // base의 요소를 반복하면서 simple의 요소를 갖고 있지 않는 반복이 있는 순간 반복을 스톱하고 false 반환
+//         base.sort((a, b) => a - b);
+//         sample.sort((a, b) => a - b);
       
-        const findArr = (item, arr, from) => {
-          for (let i = from; i < arr.length; i++) {
-            if (item === arr[i]) return i;
-            else if (item < arr[i]) return -1;
-          }
-          return -1;
-        };
+//         const findArr = (item, arr, from) => {
+//           for (let i = from; i < arr.length; i++) {
+//             if (item === arr[i]) return i;
+//             else if (item < arr[i]) return -1;
+//           }
+//           return -1;
+//         };
       
-        let baseIdx = 0;
-        for (let i = 0; i < sample.length; i++) {
-          baseIdx = findArr(sample[i], base, baseIdx);
-          if (baseIdx === -1) return false;
-        }
-        return true;
-      };
+//         let baseIdx = 0;
+//         for (let i = 0; i < sample.length; i++) {
+//           baseIdx = findArr(sample[i], base, baseIdx);
+//           if (baseIdx === -1) return false;
+//         }
+//         return true;
+//       };
 
 
-  </script>
-</body>
-</html>
+//   </script>
+// </body>
+// </html>
