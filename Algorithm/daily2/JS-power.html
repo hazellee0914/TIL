@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>power</title>
+</head>
+<body>
+  function power(base, exponent) {
+    if (exponent === 0) return 1;
+   
+     const half = parseInt(exponent / 2);
+     const temp = power(base, half);
+     const result = (temp * temp) % 94906249;
+   
+     if (exponent % 2 === 1) return (base * result) % 94906249;
+     else return result;
+   }
+   
+</body>
+</html>
