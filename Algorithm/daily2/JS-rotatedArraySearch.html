@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rotatedArraySearch</title>
+</head>
+<body>
+  <script>
+    const rotatedArraySearch = function (rotated, target) {
+  let left = 0;
+  let right = rotated.length-1;
+
+  while(left<=right){
+    let mid = parseInt((left+right)/2)
+    if(rotated[mid]===target)return mid
+    
+    //중앙선을 왼쪽이 넘었는지 오른쪽이 넘었는지부터 본다.
+    //오른쪽이 중앙선을 넘었을때
+    if(rotated[mid]<rotated[left]){
+      if(target<=rotated[right] && target>rotated[mid]){
+        left = mid+1;
+      }else{ right = mid-1;}
+    }
+    
+    //왼쪽이 중앙을 넘었을때
+    else{
+      if(target>=rotated[left] && target<rotated[mid]){
+        right = mid-1;
+      }else{
+        left = mid+1;
+      }
+    }
+  
+  }return -1
+};
+
+
+  </script>
+</body>
+</html>
