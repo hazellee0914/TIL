@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>박스 포장</title>
+  </head>
+  <body>
+    <script>
+      function paveBox(boxes) {
+        let last = boxes.shift();
+        let head = boxes[0];
+        let count = 1;
+        let result = [1];
+
+        const shiftAndGetNextElement = (arr) => [arr.shift(), arr[0]];
+
+        while (boxes.length > 0) {
+          if (last >= head) {
+            [, head] = shiftAndGetNextElement(boxes);
+            count++;
+          } else {
+            result.push(count);
+            [last, head] = shiftAndGetNextElement(boxes);
+            count = 1;
+          }
+        }
+        result.push(count);
+        return Math.max(...result);
+      }
+
+      // let box = boxes[0];
+      // let max = 1;
+      // let count = 1;
+
+      // for (let i = 1; i < boxes.length; i++) {
+      //   boxes[i] <= box ? count ++ : (count = 1, box = boxes[i]);
+      //   max < count && (max = count);
+      // }
+
+      // return max;
+    </script>
+  </body>
+</html>
