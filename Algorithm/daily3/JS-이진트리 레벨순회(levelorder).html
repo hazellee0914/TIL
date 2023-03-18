@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이진트리 레벨순회(levelorder)</title>
+  </head>
+  <body>
+    <script>
+      // Definition for a binary tree node.
+      // class TreeNode {
+      //   constructor(val = 0, left = null, right = null) {
+      //   this.val = val;
+      //   this.left = left;
+      //   this.right = right;
+      //   }
+      // }
+      /**
+       * @param {TreeNode} root
+       * @return {number[]}
+       */
+      const levelOrderTraversal = (root) => {
+        if (!root) return [];
+        const res = [];
+        let q = [root];
+
+        while (q.length) {
+          const children = []; // 나중에 큐를 끼울 친구다
+          const a = []; // bfs를 돌리는데 같은 레벨은 한번에 배열에 묶어줘야한다.
+          while (q.length) {
+            const f = q.shift();
+            a.push(f.val);
+            f.left && children.push(f.left);
+            f.right && children.push(f.right);
+          }
+          res.push(a);
+          q = children;
+        }
+        return res;
+      };
+    </script>
+  </body>
+</html>
