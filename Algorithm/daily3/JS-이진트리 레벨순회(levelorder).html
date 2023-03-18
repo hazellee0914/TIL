@@ -28,13 +28,13 @@
         while (q.length) {
           const children = []; // 나중에 큐를 끼울 친구다
           const a = []; // bfs를 돌리는데 같은 레벨은 한번에 배열에 묶어줘야한다.
-          while (q.length) {
+          while (q.length) {  // q에는 같은 레벨의 노드만 있다.
             const f = q.shift();
             a.push(f.val);
-            f.left && children.push(f.left);
+            f.left && children.push(f.left);   // 자식을 다음 큐로 만든다
             f.right && children.push(f.right);
           }
-          res.push(a);
+          res.push(a);     // 자식들이 담긴 배열을 다음 큐로 바꾼다.
           q = children;
         }
         return res;
