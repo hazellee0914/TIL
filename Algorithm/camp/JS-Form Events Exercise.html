@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Events Exercise</title>
+  </head>
+  <body>
+    <script>
+      // Leave the next line, the form must be assigned to a variable named 'form' in order for the exercise test to pass
+      const form = document.querySelector('form');
+      const list = document.querySelector('#list');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const productInput = form.elements.product;
+        const qtyInput = form.elements.qty;
+        addItem(productInput.value, qtyInput.value);
+        productInput.value = '';
+        qtyInput.value = '';
+      });
+
+      const addItem = function (productInput, qtyInput) {
+        const newItem = document.createElement('li');
+        list.appendChild(newItem);
+        newItem.innerText = `${qtyInput} ${productInput}`;
+      };
+    </script>
+  </body>
+</html>
