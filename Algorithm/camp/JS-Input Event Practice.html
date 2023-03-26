@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Event Practice</title>
+  </head>
+  <body>
+    <script>
+      const usernameInput = document.querySelector('#username');
+      const h1 = document.querySelector('h1');
+
+      usernameInput.addEventListener('input', function () {
+        const username = usernameInput.value;
+        h1.innerText = `Welcome, ${username}`;
+        if (username.length === 0) {
+          h1.innerText = 'Enter Your Username';
+        }
+      });
+    </script>
+  </body>
+</html>
