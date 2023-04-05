@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>보드 게임</title>
+  </head>
+  <body>
+    <script>
+      function boardGame(board, operation) {
+        let score = 0; //점수
+        let cur = board[0][0]; //시작점
+        let x = 0; //가로
+        let y = 0; //세로
+        for (let i = 0; i < operation.length; i++) {
+          //문자열 길이만큼만 움직이면 됨
+          if (operation[i] === 'U') {
+            y--; //세로축은 위로가니까 숫자 -1
+          } else if (operation[i] === 'D') {
+            y++;
+          } else if (operation[i] === 'R') {
+            x++; //가로축으로 숫자 +1
+          } else if (operation[i] === 'L') {
+            x--;
+          }
+
+          if (y < 0 || x < 0 || board.length < y || board.length < x) {
+            return 'OUT';
+          }
+          score = score + board[y][x];
+        }
+        return score;
+      }
+    </script>
+  </body>
+</html>
