@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function movingStuff(stuff, limit) {
+        //1. 배열을정렬해준다 (오름차순)
+        let sortedArr = stuff.sort((a, b) => a - b);
+        //2. 배열의가장왼쪽요소와배열의가장오른쪽요소를더한다
+        let min = 0;
+        let max = sortedArr.length - 1;
+        let count = 0;
+
+        //5. 박스가모두사라질때 까지 2~4를 반복한다
+        while (min <= max) {
+          //3. 더한값이 limit보다클 경우가장오른쪽요소를제거해주고(박스에 담고) 카운트를 센다
+          if (sortedArr[min] + sortedArr[max] > limit) {
+            count++;
+            max--;
+            //4. 더한값이 limit보다작을경우두 요소모두제거하고카운트를센다
+          } else if (sortedArr[min] + sortedArr[max] <= limit) {
+            min++;
+            max--;
+            count++;
+          }
+        }
+        return count;
+      }
+    </script>
+  </body>
+</html>

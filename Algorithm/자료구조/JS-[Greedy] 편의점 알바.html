@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[Greedy] 편의점 알바</title>
+  </head>
+  <body>
+    <script>
+      function partTimeJob(k) {
+        //거스름돈 횟수 세기 위한 카운트
+        let count = 0;
+
+        while (k - 500 >= 0) {
+          k = k - 500;
+          count++;
+        }
+        while (k - 100 >= 0) {
+          k = k - 100;
+          count++;
+        }
+        while (k - 50 >= 0) {
+          k = k - 50;
+          count++;
+        }
+        while (k - 10 >= 0) {
+          k = k - 10;
+          count++;
+        }
+        while (k - 5 >= 0) {
+          k = k - 5;
+          count++;
+        }
+        while (k - 1 >= 0) {
+          k = k - 1;
+          count++;
+        }
+        return count;
+      }
+    </script>
+  </body>
+</html>
