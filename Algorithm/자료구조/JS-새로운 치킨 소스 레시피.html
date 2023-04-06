@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>새로운 치킨 소스 레시피</title>
+  </head>
+  <body>
+    <script>
+      function newChickenRecipe(stuffArr, choiceNum) {
+        //1. result 선언하고 빈 배열 할당한다.
+        let result = [];
+
+        //상한 재료 여부 판별 함수
+        function isRotten(num) {
+          let str = String(num);
+          let count = 0;
+          for (let i = 0; i < str.length; i++) {
+            if (str[i] === '0') {
+              count++;
+              if (count >= 3) {
+                return false;
+              }
+            }
+          }
+          return true;
+        }
+        //신선한 재료를 일단 뽑자
+        let freshStuff = stuffArr.filter((e) => isRotten(e));
+        freshStuff.sort((a, b) => a - b); //그런 뒤에 오름차순으로 정렬해주자
+
+        //만약, 주어진 재료 모두 사용할 수 없다면 빈 배열[]을 반환해야 합니다.
+        //만약, 사용할 수 있는 재료가 choiceNum보다 작다면 빈 배열[] 을 반환해야 합니다.
+        if (freshStuff.length === 0 || freshStuff.length < choiceNum) {
+          return [];
+        }
+
+        //선택한 재료를 담을 배열(bucket)을 만들어 함수의 전달인자로 전달한다.
+        function recipe(arr, bucket) {
+          //탈출문 bucket의 길이가 choiceNum과 같아질때 result에 push하고 재귀함수 종료
+          if (bucket.length === choiceNum) {
+            result.push(bucket);
+            return;
+          }
+
+          for (let i = 0; i < arr.length; i++) {
+            //요소 하나를 선택하여
+            let choice = arr[i];
+            let newArr = arr.slice(); //원본 배열 건들지 않기 위해 원본 배열 복사
+            //선택한 요소를 빼주고
+            newArr.splice(i, 1);
+            //재귀 실행
+            recipe(newArr, [...bucket, choice]);
+          }
+        }
+        recipe(freshStuff, []);
+        return result;
+      }
+    </script>
+  </body>
+</html>
