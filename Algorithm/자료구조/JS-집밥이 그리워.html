@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>집밥이 그리워</title>
+  </head>
+  <body>
+    <script>
+      function missHouseMeal(sideDishes) {
+        //1. result를 선언하고, 빈 배열을 할당한다.
+        let result = [];
+        //2. sideDishes배열을 정렬해준다(sort)
+        sideDishes.sort();
+        //3. sideDishes 첫 요소부터 마지막 요소까지 순회하면서 각각의 요소를 배열에 넣어주거나, 넣지않는다.(재귀함수형태로구현한다.)
+        function recursion(subset, start) {
+          //4. 마지막 요소까지 순회가 끝나면, 요소들을 담고있는 배열을 result에 push한다.
+          result.push(subset);
+
+          for (let i = start; i < sideDishes.length; i++) {
+            recursion(subset.concat(sideDishes[i]), i + 1);
+          }
+        }
+        //5. 만들어진 재귀함수를 실행한다.
+        recursion([], 0);
+        //6. result를 리턴한다.
+        return result;
+      }
+    </script>
+  </body>
+</html>
