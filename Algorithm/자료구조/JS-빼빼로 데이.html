@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>빼빼로 데이</title>
+  </head>
+  <body>
+    <script>
+      function divideChocolateStick(M, N) {
+        //1. result를 선언하고 빈 배열을 할당한다.
+        let result = [];
+        //2. 두 수의 공약수를 찾는다.
+        function findgcd(a, b) {
+          while (b !== 0) {
+            let r = a % b;
+            a = b;
+            b = r;
+          }
+          return a;
+        }
+        let gcd = findgcd(M, N);
+        //3. 가장 작은 공약수부터 시작해서 가장 큰 공약수 순서대로 순회
+        //약수는 제곱근을 중심으로 해서 대칭이다. (시간복잡도 고려)
+        let sqrt = Math.floor(Math.sqrt(gcd));
+        for (let left = 1; left <= sqrt; left++) {
+          if (gcd % left === 0) {
+            //4. [공약수 , N/공약수 , M/공약수]를 result 에 push한다.
+            result.push([left, M / left, N / left]);
+
+            if (left * left < gcd) {
+              let right = gcd / left;
+              result.push([right, M / right, N / right]);
+            }
+          }
+        }
+        // 최대 공약수의 약수를 오름차순으로 정렬합니다.
+        //5. result를 리턴한다.
+        result.sort((a, b) => a[0] - b[0]);
+        return result;
+      }
+    </script>
+  </body>
+</html>
