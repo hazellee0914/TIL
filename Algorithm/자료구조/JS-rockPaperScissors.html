@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rockPaperScissors</title>
+  </head>
+  <body>
+    <script>
+      function rockPaperScissors(num) {
+        //1. 빈 배열 result 를 만들어준다.
+        let result = [];
+        //2. “rock”, “paper”, “scissors” 가 담긴배열을만들어준다.(rps)
+        let rps = ['rock', 'paper', 'scissors'];
+        //ADVANCED3. for문을 정해진 수만큼돌리는게 아니라 전달인자로 받아온 숫자만큼 돌려야합니다.
+        let rounds = num || 3; //num이 undefined일때 처리해주기 위해 3
+
+        function recursion(arr) {
+          //탈출문
+          if (arr.length === rounds) {
+            result.push(arr);
+            return;
+          }
+          //중심로직
+          for (let i = 0; i < rps.length; i++) {
+            let newArr = [...arr, rps[i]];
+            recursion(newArr);
+          }
+        }
+        recursion([]);
+        return result;
+      }
+    </script>
+  </body>
+</html>
