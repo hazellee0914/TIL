@@ -22,5 +22,5 @@ function solution(n, donuts) {
   return n / donuts;
 }
 
-solution(120, 12); // 10
-solution(40, 8); // 5
+console.log(solution(120, 12));
+console.log(solution(40, 8));
