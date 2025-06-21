@@ -11,7 +11,7 @@
  */
 
 function solution(a, b) {
-  return a * b;
+  return a + (b - 2) * a;
 }
 
 console.log(solution(100, 100));
