@@ -44,5 +44,19 @@ function solution(list, limit, reports) {
   return total <= limit;
 }
 
+// reduce 방식
+// function solution(list, limit, reports) {
+
+//   // 현재 예약된 총 인원
+//  const totalReserved = list.reduce((sum, people) => sum + people, 0)
+
+//  // 새로 신청된 인원수  더하기
+//  const total = totalReserved + reports
+
+//  // 수용 가능 여부
+//  return total <= limit
+
+// }
+
 console.log(solution([1, 5, 4, 3], 15, 3)); // false
 console.log(solution([1, 1, 1, 2], 7, 2)); // true
