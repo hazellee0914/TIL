@@ -26,9 +26,25 @@
 solution 함수를 완성하세요.
  */
 
+// map 방식
 function solution(list) {
   return list.map((value) => (value === 1 ? 'Yes' : 'No'));
 }
+
+// for문
+// function solution(list) {
+//   const result = []; // 결과를 저장할 배열
+
+//   for (let i = 0; i < list.length; i++) {
+//     if (list[i] === 1) {
+//       result.push("Yes");
+//     } else {
+//       result.push("No");
+//     }
+//   }
+
+//   return result;
+// }
 
 console.log(solution([1, 0, 0, 1]));
 // ["Yes", "No", "No", "Yes"]
