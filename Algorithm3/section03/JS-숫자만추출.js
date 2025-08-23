@@ -1,13 +1,25 @@
 function solution(str) {
   return parseInt(
     Array.from(str)
-      .filter((ch) => !isNaN(ch))
+      .map((ch) => (!isNaN(ch) ? ch : '')) // 숫자인 것만 남기기
       .join(''),
     10
   );
 }
-let str = 'g0en2T0s8eSoft';
-console.log(solution(str));
+
+let str = 'tge0a1h205er';
+console.log(solution(str)); // 1205
+
+// function solution(str) {
+//   return parseInt(
+//     Array.from(str)
+//       .filter((ch) => !isNaN(ch))
+//       .join(''),
+//     10
+//   );
+// }
+// let str = 'g0en2T0s8eSoft';
+// console.log(solution(str));
 
 //  function solution(str){
 //            // 정규식
